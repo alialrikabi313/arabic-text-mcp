@@ -22,7 +22,7 @@ Design choice: `taa_marbuta` normalization is **off by default** — it merges `
 ## Install & use
 
 ```bash
-pip install git+https://github.com/alialrikabi313/arabic-text-mcp   # PyPI release pending
+pip install arabic-text-mcp
 
 # Claude Code
 claude mcp add arabic-text -- arabic-text-mcp
