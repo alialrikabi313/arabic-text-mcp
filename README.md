@@ -2,6 +2,10 @@
 
 A small [MCP](https://modelcontextprotocol.io) server that gives any agent **deterministic Arabic text tools** — no model calls, no network, no state. Useful because LLMs are unreliable at exact character-level work (stripping diacritics, unifying alef forms, converting digits).
 
+[![tests](https://github.com/alialrikabi313/arabic-text-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/alialrikabi313/arabic-text-mcp/actions/workflows/test.yml)
+
+> **TL;DR** — Seven deterministic Arabic text tools for any MCP client; tested end-to-end through a real stdio MCP session.
+
 ## Tools
 
 | Tool | What it does |
