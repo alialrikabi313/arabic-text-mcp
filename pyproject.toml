@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "arabic-text-mcp"
+version = "0.1.0"
+description = "Deterministic Arabic text tools (normalization, diacritics, digits, Buckwalter) as an MCP server"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Ali Hashim Al-Rikabi" }]
+keywords = ["arabic", "nlp", "mcp", "model-context-protocol", "text-normalization"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Text Processing :: Linguistic",
+  "Natural Language :: Arabic",
+]
+dependencies = ["mcp>=2.3,<3"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+arabic-text-mcp = "arabic_text_mcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/alialrikabi313/arabic-text-mcp"
+Issues = "https://github.com/alialrikabi313/arabic-text-mcp/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/arabic_text_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

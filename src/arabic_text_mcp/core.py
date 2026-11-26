@@ -3,7 +3,7 @@
 
 import re
 
-from config import (
+from .constants import (
     ALEF_VARIANTS,
     BUCKWALTER,
     DIACRITICS,

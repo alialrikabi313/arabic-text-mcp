@@ -19,20 +19,21 @@ A small [MCP](https://modelcontextprotocol.io) server that gives any agent **det
 
 Design choice: `taa_marbuta` normalization is **off by default** — it merges `مدرسة`/`مدرسه` but also conflates distinct words, so it must be requested.
 
-## Use
+## Install & use
 
 ```bash
-pip install -r requirements.txt
+pip install git+https://github.com/alialrikabi313/arabic-text-mcp   # PyPI release pending
 
 # Claude Code
-claude mcp add arabic-text -- python /path/to/server.py
+claude mcp add arabic-text -- arabic-text-mcp
 ```
 
-Or in any MCP client config: `{"command": "python", "args": ["/path/to/server.py"]}` (stdio).
+Any MCP client: `{"command": "arabic-text-mcp"}` (stdio), or `python -m arabic_text_mcp`.
 
 ## Tests
 
 ```bash
+pip install -e ".[test]"
 pytest tests
 ```
 

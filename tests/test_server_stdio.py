@@ -1,19 +1,15 @@
 # -*- coding: utf-8 -*-
-"""اختبار شامل: يشغّل server.py عملية فعلية ويستدعي أدواته عبر عميل MCP على stdio."""
+"""اختبار شامل: يشغّل الخادم المثبَّت (python -m arabic_text_mcp) عملية فعلية ويستدعي أدواته عبر عميل MCP على stdio."""
 
 import asyncio
 import sys
-from pathlib import Path
-
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
-
-_ROOT = Path(__file__).resolve().parent.parent
 
 
 async def _call(tool: str, args: dict):
     params = StdioServerParameters(
-        command=sys.executable, args=[str(_ROOT / "server.py")], cwd=str(_ROOT)
+        command=sys.executable, args=["-m", "arabic_text_mcp"]
     )
     async with stdio_client(params) as (read, write):
         async with ClientSession(read, write) as session:

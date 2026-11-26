@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """خادم MCP لأدوات النص العربي: تطبيع، تشكيل، أرقام، Buckwalter، جمل، إحصاءات.
 
-يعمل عبر stdio. أضفه لأي عميل MCP بالأمر: python server.py
+يعمل عبر stdio. أضفه لأي عميل MCP بالأمر: arabic-text-mcp  (أو python -m arabic_text_mcp)
 """
 
-import arabic_text as at
 from mcp.server.mcpserver import MCPServer
+
+from . import core as at
 
 mcp = MCPServer(
     "arabic-text",

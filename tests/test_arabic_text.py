@@ -1,14 +1,9 @@
 # -*- coding: utf-8 -*-
 """اختبارات الدوال. كل حالة نص عربي حقيقي صادفناه، لا بيانات مخترَعة."""
 
-import sys
-from pathlib import Path
-
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-
-import arabic_text as at
+from arabic_text_mcp import core as at
 
 
 def test_basmala_uthmani_script_normalizes_to_plain():
